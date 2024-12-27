@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package booking.v1;
+
+import "google/type/datetime.proto";
+
+// The booking service definition.
+service BookingService {
+  // Sends a booking request.
+  rpc CreateBooking(CreateBookingRequest) returns (CreateBookingResponse);
+  // Get booking details.
+  rpc GetBooking(GetBookingRequest) returns (GetBookingResponse);
+}
+
+// The request message containing the booking details.
+message CreateBookingRequest {
+  string user_id = 1;
+  string hotel_id = 2;
+  google.type.DateTime check_in_date = 3;
+  google.type.DateTime check_out_date = 4;
+}
+
+// The response message containing the booking confirmation.
+message CreateBookingResponse {
+  string confirmation_id = 1;
+  string status = 2;
+}
+
+// The request message for getting booking details.
+message GetBookingRequest {
+  string booking_id = 1;
+}
+
+// The response message containing the booking details.
+message GetBookingResponse {
+  string booking_id = 1;
+  string user_id = 2;
+  string hotel_id = 3;
+  google.type.DateTime check_in_date = 4;
+  google.type.DateTime check_out_date = 5;
+  string status = 6;
+}
