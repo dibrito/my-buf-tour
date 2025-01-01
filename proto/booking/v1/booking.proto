@@ -37,7 +37,7 @@ message CreateBookingRequest {
 // The response message containing the booking confirmation.
 message CreateBookingResponse {
   string confirmation_id = 1;
-  string status = 2;
+  BookingStatus status = 2;
 }
 
 // The request message for getting booking details.

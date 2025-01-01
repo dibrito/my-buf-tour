@@ -44,7 +44,7 @@ func (b *bookingServiceServer) CreateBooking(
 
 	return connect.NewResponse(&bookingv1.CreateBookingResponse{
 		ConfirmationId: "123",
-		// Status:         bookingv1.BOOKING_STATUS_CONFIRMED,
+		Status:         bookingv1.BookingStatus_BOOKING_STATUS_CONFIRMED,
 	}), nil
 }
 
