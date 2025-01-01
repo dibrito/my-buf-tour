@@ -1,6 +1,10 @@
 version: v2
 managed:
   enabled: true
+  # don't forget to add dependencies to the managed module so generated code can 
+  # refer correct repository.
+  disable:
+    - module: buf.build/googleapis/googleapis
   override:
     - file_option: go_package_prefix
       value: github.com/dibrito/my-buf-tour/gen
@@ -12,4 +16,4 @@ plugins:
     out: gen
     opt: paths=source_relative
 inputs:
-  - directory: booking
+  - directory: proto

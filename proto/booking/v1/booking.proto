@@ -16,6 +16,12 @@ service BookingService {
 message CreateBookingRequest {
   string user_id = 1;
   string hotel_id = 2;
+  // TODO: fix the date time type, when I add this
+  // the genated code references: /Users/Pedro.BRITO/dev/prive/dev/my-buf-tour/gen/booking/v1/booking.pb.go
+  // to be the onwer of _type.DateTime, but my gen code does not generate this type.
+  // it should be from google repo!
+  // I mannually imported in generated file: _type "google.golang.org/genproto/googleapis/type/datetime"
+  // but on the next gen it will be lost.
   google.type.DateTime check_in_date = 3;
   google.type.DateTime check_out_date = 4;
 }
@@ -36,7 +42,7 @@ message GetBookingResponse {
   string booking_id = 1;
   string user_id = 2;
   string hotel_id = 3;
-  google.type.DateTime check_in_date = 4;
-  google.type.DateTime check_out_date = 5;
+  // google.type.DateTime check_in_date = 4;
+  // google.type.DateTime check_out_date = 5;
   string status = 6;
 }
