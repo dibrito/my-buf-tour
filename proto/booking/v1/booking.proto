@@ -4,6 +4,14 @@ package booking.v1;
 
 import "google/type/datetime.proto";
 
+// Enum for booking statuses.
+enum BookingStatus {
+  BOOKING_STATUS_UNSPECIFIED = 0;
+  BOOKING_STATUS_CONFIRMED = 1;
+  BOOKING_STATUS_PENDING = 2;
+  BOOKING_STATUS_CANCELLED = 3;
+}
+
 // The booking service definition.
 service BookingService {
   // Sends a booking request.
